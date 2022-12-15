@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Best Cosmetic Products</h1>
+          <h2>Cosmetic products are applied to the skin and various body parts to make them attractive, smooth, bright, and enhance their appeal.</h2>
+          <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="{% static 'assets/img/hero-img.png ' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <main id="main">
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="text-center title">
+          <h3>What we have achieved so far</h3>
+          <p>Iusto et labore modi qui sapiente xpedita tempora et aut non ipsum consequatur illo.</p>
+        </div>
+
+        <div class="row counters position-relative">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Clients</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Projects</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hours Of Support</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hard Workers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="clients" class="clients">
+      <div class="container">
+        <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'assets/img/clients/client-1.png ' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'assets/img/clients/client-2.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'assets/img/clients/client-3.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'assets/img/clients/client-7.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'assets/img/clients/client-8.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="team" class="team section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Products</h2>
+          <p>Cosmetic products must not only promote healthy skin but also provide a beautiful tapestry of colors for every complexion. The state of the art in classical cosmetics is the use of finely crushed minerals and botanicals of the best quality.</p>
+        </div>
+        <div class="row">
+        {% for i in pr %}
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <a href="{{i.get_url}}">
+                <img src="{{i.img.url}}" class="img-fluid" alt="">
+                </a>
+              </div>
+              <div class="member-info">
+                <h4>{{i.name}}</h4>
+                <span>&#x20B9;{{i.price}}</span>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
